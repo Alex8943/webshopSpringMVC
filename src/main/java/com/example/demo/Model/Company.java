@@ -1,7 +1,13 @@
 package com.example.demo.Model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name= "Companies")
 public class Company {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private long id;
    private String name;
 

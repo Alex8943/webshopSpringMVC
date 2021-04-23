@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Product list:</title>
 </head>
 <body>
 
-<h2> Dette er en test</h2>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h1>Products</h1>
+                </div>
+
+                <div class="row">
+                    <table class="table">
+                        <thead class="thead-beigh">
+                        <tr>
+                        <th>Id</th>
+                        <th>Varenavn</th>
+                        <th>Pris</th>
+                        <th>Beskrivelse</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="p : ${products}">
+                            <td th:text="${p.id}"></td>
+                            <td th:text="${p.name}"></td>
+                            <td th:text="${p.price}"></td>
+                            <td>
+                                <div class="btn.group">
+                                    <a th:href="@{'/update/' + ${m.id}}" class="btn btn-warning">Update</a>
+                                    <a th:href="@{'/delete/' + ${m.id}}" class="btn btn-danger">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <a href="create" class="btn btn-primary" role="button">Create Model</a>
+            </div>
 
 </body>
 </html>

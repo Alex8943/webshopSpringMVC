@@ -1,4 +1,7 @@
 package com.example.demo.Repository;
 
-public interface CompanyRepository {
+import com.example.demo.Model.Company;
+import org.springframework.data.repository.CrudRepository;
+
+public interface CompanyRepository extends CrudRepository<Company, Long> {
 }
