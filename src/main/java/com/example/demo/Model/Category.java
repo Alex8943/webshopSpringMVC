@@ -2,6 +2,7 @@ package com.example.demo.Model;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "Categories")
 public class Category {
@@ -15,6 +16,10 @@ public class Category {
     public Category(long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Category(){
+
     }
 
     public long getId() {

@@ -16,6 +16,10 @@ public class Company {
         this.name = name;
     }
 
+    public Company(){
+
+    }
+
     public long getId() {
         return id;
     }

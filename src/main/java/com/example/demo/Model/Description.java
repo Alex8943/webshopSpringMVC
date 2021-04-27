@@ -18,6 +18,10 @@ public class Description {
         this.description = description;
     }
 
+    public Description(){
+
+    }
+
     public long getId() {
         return id;
     }
