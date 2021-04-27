@@ -19,13 +19,48 @@
             <div class="form-group">
                 <label for="product"> </label>
                 <input class="form-control selectpicker" id="product" name="products" placeholder="product">
-                    <option th:each="product : ${products}"
-                            th:value="${product.id}"
-                            th:text="${product.name}"
-                            th:text="${product.price}">
+                    <option th:each="prod : ${products}"
+                            th:value="${prod.id}"
+                            th:text="${prod.name}"
+                            th:text="${prod.price}">
+                        >Product
                     </option>
-                </input>
             </div>
+        </form>
+        <form action="/create" method="post" th:object="${category}">
+            <div class="form-group">
+                <label for="categories"> </label>
+                <input class="form-control selectpicker" id="categories" name="categories" placeholder="categories">
+                    <option th:each="cat : ${Categories}"
+                            th:value="${cat.id}"
+                            th:text="${cat.name}">
+                        >Category
+
+                    </option>
+            </div>
+        </form>
+        <form action="/create" method="post" th:object="${companies}">
+            <div class="form-group">
+                <label for="companies"> </label>
+                <input class="form-control selectpicker" id="companies" name="companies" placeholder="companies">
+                    <option th:each="com : ${Companies}"
+                            th:value="${com.id}"
+                            th:text="${com.name}">
+                    >Company
+                    </option>
+            </div>
+        </form>
+        <form action="/create" method="post" th:object="${description}">
+            <div class="form-group">
+                <label for="description"> </label>
+                <input class="form-control selectpicker" id="description" name="description" placeholder="description">
+                    <option th:each="des : ${Descriptions}"
+                            th:value="${des.id}"
+                            th:text="${des.description}">
+                    >Description
+                    </option>
+            </div>
+        </form>
             <p id="space"></p>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-success" role="button">

@@ -1,6 +1,8 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Model.Category;
 import com.example.demo.Model.Company;
+import com.example.demo.Model.Description;
 import com.example.demo.Model.Product;
 import com.example.demo.Service.CategoryService;
 import com.example.demo.Service.CompanyService;
@@ -36,8 +38,11 @@ public class ProductController {
     }
 
     @GetMapping("/create")
-    public String create(Model model, Company company){
+    public String create(Model model, Product product, Description description, Company company, Category category){
+        model.addAttribute("Products", productService.create(product));
+        model.addAttribute("Descriptions", descriptionSerivce.create(description));
         model.addAttribute("Companies", companyService.create(company));
+        model.addAttribute("Categories", categoryService.create(category));
         return "create";
     }
 

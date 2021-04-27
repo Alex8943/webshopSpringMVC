@@ -29,6 +29,19 @@
                             <td th:text="${p.id}"></td>
                             <td th:text="${p.name}"></td>
                             <td th:text="${p.price}"></td>
+
+                        <tr th:each="p : ${Categories}">
+                            <td th:text="${p.id}"></td>
+                            <td th:text="${p.name}"></td>
+
+                        <tr th:each="p : ${Companies}">
+                            <td th:text="${p.id}"></td>
+                            <td th:text="${p.name}"></td>
+
+                        <tr th:each="p : ${Description}">
+                            <td th:text="${p.id}"></td>
+                            <td th:text="${p.description}"></td>
+
                             <td>
                                 <div class="btn.group">
                                     <a th:href="@{'/update/' + ${m.id}}" class="btn btn-warning">Update</a>
