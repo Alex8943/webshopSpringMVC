@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "Products")
+@Table(name = "products")
 
 public class Product {
 
