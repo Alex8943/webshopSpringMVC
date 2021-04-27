@@ -1,6 +1,5 @@
 package com.example.demo.Controller;
 
-
 import com.example.demo.Model.Company;
 import com.example.demo.Model.Product;
 import com.example.demo.Service.CategoryService;
@@ -45,13 +44,19 @@ public class ProductController {
     @PostMapping("/create")
     public String create(@ModelAttribute Product product){
         productService.create(product);
-        return "redirect:/create";
+        return "redirect:/";
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") long id){
         productService.deleteById(id);
-        return "redirect:/mods";
+        return "redirect:/";
+    }
+
+    @GetMapping("/update")
+    public String update(Product product){
+        productService.update(product);
+        return "update";
     }
 
 }
